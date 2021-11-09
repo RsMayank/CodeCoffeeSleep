@@ -1,0 +1,71 @@
+<!Doctype html>
+	<html>
+	<head>
+		<title> Form Validation </title>
+		<style type="text/css">
+			form { 
+					margin: 0 auto; 
+					width:300px;
+				}
+		</style>
+	</head>
+	<body>
+		<p> This is a simple site with a Form </p>
+		<p> Fill the form , it will validate via JavaScript </p>
+		<form name="myForm" onsubmit="return validateForm()" method="post">
+			  <label for="fname">Name:</label><br>
+			  <input type="text" id="name" name="name"><br><br>
+
+			  <label for="dob">DOB:</label><br>
+			  <input type="text" id="dob" name="dob"><br><br>
+
+			  <label for = "city"> City : </label><br>
+			  <input type="text" id = "city" name= "city"><br><br>
+
+				<lable for = "gender"> Gender: </lable> <br>
+				<input type="radio" id="male" name="Gender" value="Male">
+				<label for="male">Male</label>
+				<input type="radio" id="female" name="Gender" value="Female">
+				<label fr = "female"> Female </label>
+				<input type="radio" id="Other" name="Gender" value="Other">
+				<label for = "other"> Other </label><br><br>
+
+				<label for="state">State:</label><br>
+			  	<input type="text" id="state" name="state"><br><br>
+
+			  	<label form="email">Email:</label><br>
+			  	<input type="text" id="email" name="email"><br><br>
+
+			  	<label for="phone">Phone Number:</label><br>
+			  	<input type="text" id="phone" name="phone"><br><br>
+
+
+
+
+
+			  <input type="submit" value="Submit">
+			  <input type="submit" formtarget="_blank" value="Submit to a new window/tab">
+			  <input type="reset" name="Reset">
+		</form>
+		<script type="text/javascript">
+
+			function validateForm() {
+			  let x = document.forms["myForm"]["name"].value;
+			  let mail = document.forms["myForm"]["email"].value;
+			  let mailpattern =/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+			  if (x == "") {
+			    alert("Name must be filled out");
+			    return false;
+  				}
+
+    		   if(!(mail.match(mailpattern)))
+    		   	{
+    		   		//alert(mail);
+    		   		alert("Enter Valid Mail")
+    		   		return false;
+    		   	}
+    		}
+
+		</script>
+	</body>
+	</html>
